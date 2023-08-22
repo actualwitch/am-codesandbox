@@ -3,7 +3,7 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt install -y python3 python3-pip pipx curl
-RUN pipx install poetry
+RUN pip install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry config virtualenvs.in-project true
 RUN poetry install
