@@ -4,12 +4,18 @@
     "quart": {
       "name": "Run Quart",
       "command": "python3 server.py",
-      "runAtStart": true
+      "runAtStart": true,
+      "preview": {
+        "port": 5000
+      }
     },
     "autometrics": {
       "name": "Run Autometrics",
       "command": "cd /project && ./am start :5000",
-      "runAtStart": true
+      "runAtStart": true,
+      "preview": {
+        "port": 6789
+      }
     }
   }
 }
