@@ -11,4 +11,5 @@ RUN chmod u+x am
 # RUN ./am start :5000
 
 ADD . .
+RUN cat pyproject.toml
 RUN poetry install
