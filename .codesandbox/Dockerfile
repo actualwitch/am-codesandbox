@@ -1,6 +1,7 @@
 FROM ubuntu
 
 ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /workspace
 
 RUN apt update && apt install -y python3 python3-pip curl
 RUN pip install poetry
