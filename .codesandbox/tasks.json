@@ -1,0 +1,15 @@
+{
+  "$schema": "https://codesandbox.io/schemas/tasks.json",
+  "tasks": {
+    "quart": {
+      "name": "Run Quart",
+      "command": "python3 server.py",
+      "runAtStart": true
+    },
+    "autometrics": {
+      "name": "Run Autometrics",
+      "command": "./project/am",
+      "runAtStart": true
+    }
+  }
+}
