@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  prom:
+    # Make host.docker.internal available for all? platforms
+    # On certain platforms like linux or with certain alternatives for
+    # docker host.docker.internal is not available. This is a workaround.
+    # You can switch docker to host networking mode for unsupported platforms.
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    image: prom/prometheus
+    entrypoint: /bin/prometheus 
+             --enable-feature=exemplar-storage 
+             --config.file=/etc/prometheus/prometheus.yml
+             --storage.tsdb.path=/prometheus
+             --web.console.libraries=/usr/share/prometheus/console_libraries
+             --web.console.templates=/usr/share/prometheus/consoles
+    ports:
+      - "${FP_PROM_PORT:-9090}:9090"
+    volumes:
+      - prometheus_data:/prometheus
+      - ./prometheus/autometrics.rules.yml:/etc/prometheus/autometrics.rules.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
