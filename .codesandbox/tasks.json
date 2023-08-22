@@ -8,7 +8,7 @@
     },
     "autometrics": {
       "name": "Run Autometrics",
-      "command": "./project/am",
+      "command": "cd /project && ./am start :5000",
       "runAtStart": true
     }
   }
