@@ -4,14 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /workspace
 
 RUN apt update && apt install -y python3 python3-pip curl
-RUN pip install poetry
-RUN poetry config virtualenvs.create false
-RUN poetry config virtualenvs.in-project true
+RUN pip install quart autometrics
 RUN curl -L https://github.com/autometrics-dev/am/releases/latest/download/am-linux-x86_64 -o am
 RUN chmod u+x am
 # RUN ./am start :5000
-
-ADD . .
-RUN pwd
-RUN ls -la
-RUN poetry install
