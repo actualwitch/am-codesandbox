@@ -12,10 +12,7 @@
     "autometrics": {
       "name": "Run Autometrics",
       "command": "cd /project && ./am start :5000",
-      "runAtStart": true,
-      "preview": {
-        "port": 6789
-      }
+      "runAtStart": true
     }
   }
 }
