@@ -1,5 +1,5 @@
 from autometrics import autometrics
-from quart import Quart, render_template
+from quart import Quart
 
 app = Quart(__name__)
 
@@ -7,7 +7,7 @@ app = Quart(__name__)
 @autometrics
 @app.route("/")
 async def hello():
-    return await render_template("index.html")
+    return "Hello world!"
 
 
 if __name__ == "__main__":
