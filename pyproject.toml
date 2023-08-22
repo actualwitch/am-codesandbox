@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "am-codesandbox"
+version = "0.1.0"
+description = ""
+authors = ["あで <adelaide@fiberplane.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "am_codesandbox" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+quart = "^0.18"
+autometrics = "^0.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
