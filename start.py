@@ -1,9 +1,6 @@
 from quart import Quart
 from autometrics import init
 
-import _01_start
-import _02_error
-
 init(
     tracker="prometheus",
     enable_exemplars=True,
@@ -15,4 +12,7 @@ init(
 app = Quart(__name__)
 
 if __name__ == "__main__":
+    import _01_start
+    import _02_error
+
     app.run()
