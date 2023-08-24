@@ -2,7 +2,7 @@
   "$schema": "https://codesandbox.io/schemas/tasks.json",
   "tasks": {
     "autometrics": {
-      "name": "Run Autometrics",
+      "name": "Autometrics",
       "command": "cd /project && ./am start :5000",
       "runAtStart": true,
       "preview": {
@@ -10,8 +10,8 @@
       }
     },
     "quart": {
-      "name": "Run Quart",
-      "command": "python3 01-start.py",
+      "name": "Server (Quart)",
+      "command": "python3 __init__.py",
       "runAtStart": true,
       "preview": {
         "port": 5000
