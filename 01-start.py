@@ -1,6 +1,3 @@
-import os
-import inspect
-
 from autometrics import autometrics
 from prometheus_client import generate_latest
 from quart import Quart
@@ -20,5 +17,4 @@ async def metrics():
 
 
 if __name__ == "__main__":
-    print(os.path.basename(inspect.getsourcefile(metrics)))
     app.run()
