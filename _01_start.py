@@ -1,19 +1,20 @@
 from autometrics import autometrics
+from quart import Blueprint
 from prometheus_client import generate_latest
 
-from start import app
+_01_start = Blueprint("_01_start", __name__)
 
 
 # Let's start by adding a simple route that returns a string
 # and instrument it with autometrics
-@app.route("/")
+@_01_start.route("/")
 @autometrics
 async def hello():
     return "Hello world!"
 
 
 # We will also add a metrics endpoint that returns the Prometheus metrics
-@app.route("/metrics")
+@_01_start.route("/metrics")
 async def metrics():
     return generate_latest()
 

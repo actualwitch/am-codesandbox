@@ -2,8 +2,9 @@ import asyncio
 import random
 
 from autometrics import autometrics
+from quart import Blueprint
 
-from start import app
+_02_error = Blueprint("_02_error", __name__)
 
 # Let's add a route that will call another function that is unstable and introduces
 # errors and jitter. We will also instrument both functions with autometrics.
@@ -20,7 +21,7 @@ async def unstable_function():
 # Now let's add a route that calls the unstable function and returns the result.
 
 
-@app.route("/error")
+@_02_error.route("/error")
 @autometrics
 async def error():
     return await unstable_function()
