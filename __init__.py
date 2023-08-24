@@ -1,6 +1,9 @@
 from quart import Quart
 from autometrics import init
 
+import ._01_start
+import ._02_error
+
 init(
     tracker="prometheus",
     enable_exemplars=True,
