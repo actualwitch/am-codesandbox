@@ -1,8 +1,8 @@
 from quart import Quart
 from autometrics import init
 
-import ._01_start
-import ._02_error
+from . import _01_start
+from . import _02_error
 
 init(
     tracker="prometheus",
