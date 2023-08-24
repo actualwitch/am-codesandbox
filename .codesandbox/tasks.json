@@ -11,7 +11,7 @@
     },
     "quart": {
       "name": "Run Quart",
-      "command": "python3 server.py",
+      "command": "python3 01-start.py",
       "runAtStart": true,
       "preview": {
         "port": 5000
