@@ -1,7 +1,7 @@
 from autometrics import autometrics
 from prometheus_client import generate_latest
 
-from . import app
+from start import app
 
 
 # Let's start by adding a simple route that returns a string

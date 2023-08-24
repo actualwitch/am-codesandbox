@@ -3,7 +3,7 @@ import random
 
 from autometrics import autometrics
 
-from . import app
+from start import app
 
 # Let's add a route that will call another function that is unstable and introduces
 # errors and jitter. We will also instrument both functions with autometrics.
