@@ -31,8 +31,8 @@ def format_string(answer):
 # Now let's add a route that calls the unstable function and returns the result.
 
 
-@autometrics
 @_02_error.route("/error")
+@autometrics
 async def error():
     answer = get_answer()
     await unstable_function()

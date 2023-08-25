@@ -24,8 +24,8 @@ my_objective = Objective(
 # Now we'll apply that objective to our function using the `@autometrics` decorator.
 
 
-@autometrics(objective=my_objective)
 @_03_slo.route("/slo")
+@autometrics(objective=my_objective)
 async def important_handler():
     await sleep(0.1 + random.random() * 0.1)
     if random.random() < 0.1:
