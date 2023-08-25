@@ -16,6 +16,11 @@
       "preview": {
         "port": 5000
       }
+    },
+    "locust": {
+      "name": "Load Testing (Locust)",
+      "command": "locust --users=5 --headless -f .codesandbox/locustfile.py --host=http://localhost:5000",
+      "runAtStart": true
     }
   }
 }
