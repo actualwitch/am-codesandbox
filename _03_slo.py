@@ -1,7 +1,10 @@
+import random
+
+
+from asyncio import sleep
 from autometrics import autometrics
 from autometrics.objectives import Objective, ObjectiveLatency, ObjectivePercentile
 from quart import Blueprint
-from _02_error import get_answer, format_string, unstable_function
 
 _03_slo = Blueprint("_03_slo", __name__)
 
@@ -15,7 +18,7 @@ _03_slo = Blueprint("_03_slo", __name__)
 my_objective = Objective(
     name="my_objective",
     latency=ObjectiveLatency.Ms100,
-    percentile=ObjectivePercentile.P95,
+    success_rate=ObjectivePercentile.P95,
 )
 
 # Now we'll apply that objective to our function using the `@autometrics` decorator.
@@ -23,10 +26,11 @@ my_objective = Objective(
 
 @autometrics(objective=my_objective)
 @_03_slo.route("/slo")
-async def get_answer():
-    answer = get_answer()
-    await unstable_function()
-    return format_string(answer)
+async def important_handler():
+    await sleep(0.1 + random.random() * 0.1)
+    if random.random() < 0.1:
+        raise Exception("Something went wrong!")
+    return "This is a very important handler!"
 
 
 # Now let's run the server and see what happens. Open the SLO tab in the Autometrics
