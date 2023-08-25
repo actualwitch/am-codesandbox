@@ -5,8 +5,6 @@ from _01_start import _01_start
 from _02_error import _02_error
 
 init(
-    tracker="prometheus",
-    enable_exemplars=True,
     service_name="am-codesandbox",
     version="0.0.1",
     commit="123456",
