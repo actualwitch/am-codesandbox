@@ -3,7 +3,7 @@
   "tasks": {
     "autometrics": {
       "name": "Autometrics",
-      "command": "cd /project && rm -rf ./.autometrics && ./am start :5000",
+      "command": "cd /project && ./am start :5000",
       "runAtStart": true,
       "preview": {
         "port": 6789
