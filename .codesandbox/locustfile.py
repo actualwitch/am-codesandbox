@@ -8,6 +8,6 @@ class GuestUser(HttpUser):
     def visit_index_handler(self):
         self.client.get("/")
 
-    @task(2)
+    @task
     def visit_concurrency_handler(self):
         self.client.get("/error")

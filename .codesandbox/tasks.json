@@ -11,7 +11,7 @@
     },
     "quart": {
       "name": "Server (Quart)",
-      "command": "python3 start.py",
+      "command": "AUTOMETRICS_TRACKER=prometheus AUTOMETRICS_VERSION=0.1 AUTOMETRICS_BRANCH=main AUTOMETRICS_COMMIT=123456 python3 start.py",
       "runAtStart": true,
       "preview": {
         "port": 5000

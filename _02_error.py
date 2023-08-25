@@ -13,7 +13,7 @@ _02_error = Blueprint("_02_error", __name__)
 @autometrics
 async def unstable_function():
     await asyncio.sleep(random.random() * 2)
-    if random.random() < 1:
+    if random.random() < 0.1:
         raise Exception("Something went wrong!")
     return "The answer is 42!"
 
