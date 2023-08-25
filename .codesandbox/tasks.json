@@ -3,7 +3,7 @@
   "tasks": {
     "autometrics": {
       "name": "Autometrics",
-      "command": "cd /project && ./am start :5000",
+      "command": "cd /project && rm -rf .autometrics && ./am start :5000",
       "runAtStart": true,
       "preview": {
         "port": 6789
@@ -18,8 +18,8 @@
       }
     },
     "locust": {
-      "name": "Load Testing (Locust)",
-      "command": "locust --users=5 --headless -f .codesandbox/locustfile.py --host=http://localhost:5000",
+      "name": "Load Generation",
+      "command": "locust --users=20 --headless -f .codesandbox/locustfile.py --host=http://localhost:5000",
       "runAtStart": true
     }
   }
