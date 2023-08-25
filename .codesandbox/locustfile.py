@@ -11,3 +11,7 @@ class GuestUser(HttpUser):
     @task
     def visit_concurrency_handler(self):
         self.client.get("/error")
+
+    @task
+    def visit_slo_handler(self):
+        self.client.get("/slo")
