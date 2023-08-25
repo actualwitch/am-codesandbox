@@ -15,13 +15,25 @@ async def unstable_function():
     await asyncio.sleep(random.random() * 2)
     if random.random() < 0.1:
         raise Exception("Something went wrong!")
-    return "The answer is 42!"
+
+
+@autometrics
+def get_answer():
+    answer = 20 + 22
+    return answer
+
+
+@autometrics
+def format_string(answer):
+    return f"The answer is {answer}!"
 
 
 # Now let's add a route that calls the unstable function and returns the result.
 
 
-@_02_error.route("/error")
 @autometrics
+@_02_error.route("/error")
 async def error():
-    return await unstable_function()
+    answer = get_answer()
+    await unstable_function()
+    return format_string(answer)

@@ -7,8 +7,8 @@ _01_start = Blueprint("_01_start", __name__)
 
 # Let's start by adding a simple route that returns a string
 # and instrument it with autometrics
-@_01_start.route("/")
 @autometrics
+@_01_start.route("/")
 async def hello():
     return "Hello world!"
 
